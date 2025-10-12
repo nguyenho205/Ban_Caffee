@@ -1,6 +1,7 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using Ban_Caffee.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ban_Caffee.Controllers;
 
@@ -15,6 +16,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        return View();
+    }
+    public ActionResult Detail()
+    {
+       
+
         return View();
     }
 

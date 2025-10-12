@@ -1,0 +1,55 @@
+﻿/* Responsive tùy chỉnh thêm */
+.product-detail img {
+    object-fit: cover;
+    min-height: 300px;
+}
+
+@media (max-width: 767.98px) {
+    .product-detail img {
+        border-bottom: 2px solid #eee;
+    }
+
+    .product-detail .card-body {
+        text-align: center;
+    }
+
+    .product-detail .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .product-detail {
+        margin: 0 10px;
+    }
+
+        .product-detail img {
+            height: 100%;
+        }
+}
+
+@media (min-width: 992px) {
+    .product-detail img {
+        max-height: 450px;
+    }
+}
+/* Responsive cải tiến */
+@media (max-width: 767px) {
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    img.img-fluid {
+        width: 90%;
+    }
+}
+
