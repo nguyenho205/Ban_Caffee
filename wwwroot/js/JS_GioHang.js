@@ -26,3 +26,24 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Tìm tất cả các nút xóa có class là 'remove-item'
+    const removeButtons = document.querySelectorAll('.remove-item');
+
+    // 2. Lặp qua từng nút và gán sự kiện 'click' cho nó
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // 3. Khi nút được click, tìm phần tử cha '.cart-item' gần nhất...
+            const cartItem = button.closest('.cart-item');
+            
+            // ... và xóa nó khỏi trang
+            if (cartItem) {
+                cartItem.remove();
+            }
+
+            // (Tùy chọn) Gọi hàm để cập nhật lại tổng tiền giỏ hàng
+            // updateCartTotal(); 
+        });
+    });
+});

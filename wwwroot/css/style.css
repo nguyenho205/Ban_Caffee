@@ -617,4 +617,33 @@
             font-family: sans-serif;
             padding: 20px;
         }
-        
+        /*css footer*/
+.coffee-footer {
+    background-color: #6b4f37;
+}
+
+.coffee-footer h5 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.coffee-footer a:hover {
+    text-decoration: underline;
+    color: #ffdddd;
+}
+
+/* Responsive chỉnh lại footer */
+@media (max-width: 767px) {
+    .coffee-footer img {
+        max-width: 120px;
+    }
+
+    .coffee-footer h5 {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .coffee-footer ul {
+        text-align: center;
+    }
+}
