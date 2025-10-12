@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyZ88n1r6AKnU8zXR0j6ozlKtyKx2Zq+caSFfbtHnFSLhd6YhS/5YyJ2Z+7e0pH7a5o6d3T3V9zzTtmI3UksdKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/style_GioHang.css" rel="stylesheet" />
 </head>
 <body>
     <header class="header">
@@ -24,15 +25,16 @@
         </div>
 
         <div class="header-icons">
-            <div class="icon">
-                <i class="bi bi-bell"></i>
-                <span class="badge">2</span>
-            </div>
-
-            <button type="button" class="cart-button" aria-label="Xem giỏ hàng" href="~/GioHang.cshtml">
-                <i class="bi bi-basket"></i>
+            
+            <a class="cart-button" aria-label="Xem thông báo" href="~/Home/GioHang">
+                 <i class="bi bi-bell"></i>
                 <span class="badge">3</span>
-            </button>
+            </a>
+
+            <a class="cart-button" aria-label="Xem giỏ hàng" href="~/Home/GioHang">
+                 <i class="bi bi-basket"></i>
+                <span class="badge">3</span>
+            </a>
 
             <div class="dropdown">
             <button class="dropbtn">
@@ -57,7 +59,7 @@
                     <h3>Danh mục sản phẩm</h3> 
                     
                     <div class="list-group list-group-flush mb-3">
-                        <a href="" class="list-group-item list-group-item-action">Trang chủ</a>
+                        <a href="~/Home/Index" class="list-group-item list-group-item-action">Trang chủ</a>
                     </div>
                     
                     <div class="accordion accordion-flush" id="productCategoriesAccordion">
@@ -140,6 +142,8 @@
             <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
         </svg>
     </a>
+
+    <script src="~/js/JS_GioHang.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
