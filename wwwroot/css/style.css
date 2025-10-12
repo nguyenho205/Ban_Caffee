@@ -316,6 +316,61 @@
         background-color: #f2e3d5;
         color: #8B5E3C;
     }
+
+
+/* css gio hang*/
+
+.cart-button {
+    /* --- Thiết lập cơ bản cho nút --- */
+    position: relative; /* Rất quan trọng: làm gốc để định vị badge */
+    background-color: #8B5E3C; /* Màu nền xám nhạt */
+    border: 1px solid #8B5E3C; /* Viền nút */
+    border-radius: 50%; /* Bo tròn để tạo thành hình tròn */
+    width: 50px;       /* Chiều rộng */
+    height: 50px;      /* Chiều cao */
+    cursor: pointer;   /* Biểu tượng con trỏ tay khi di chuột */
+    
+    /* --- Căn giữa icon --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* --- Hiệu ứng chuyển động mượt mà --- */
+    transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng khi di chuột qua nút */
+.cart-button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Tùy chỉnh kích thước icon */
+.cart-button .bi-basket {
+    font-size: 24px; /* Kích thước icon */
+    color: #333;
+}
+
+/* --- Định vị và tạo kiểu cho badge (số lượng) --- */
+.cart-button .badge {
+    position: absolute;   /* Định vị tuyệt đối so với nút cha (.cart-button) */
+    top: 0;
+    right: 0;
+    transform: translate(25%, -25%); /* Dịch chuyển badge ra góc ngoài */
+
+    background-color: #dc3545; /* Màu đỏ cho thông báo */
+    color: white;
+    border-radius: 50%;
+    
+    /* Kích thước và căn chữ cho badge */
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white; /* Tạo viền trắng xung quanh badge */
+}
 /*
 /*
 * ======================================
