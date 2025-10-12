@@ -318,6 +318,67 @@
     }
 
 
+/* style.css */
+
+/* === Nút chứa icon và badge === */
+.cart-button {
+    /* Quan trọng: Đặt làm gốc để định vị badge con */
+    position: relative; 
+    
+    /* Kiểu dáng cơ bản */
+    display: inline-flex; /* Giúp căn chỉnh nội dung bên trong */
+    align-items: center;
+    justify-content: center;
+    width: 48px;  /* Chiều rộng */
+    height: 48px; /* Chiều cao */
+    background-color: transparent; /* Nền trong suốt */
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Bo tròn để tạo hình tròn */
+    text-decoration: none; /* Bỏ gạch chân của thẻ <a> */
+    color: #fdfcfc; /* Màu mặc định của icon */
+    
+    /* Hiệu ứng */
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hiệu ứng khi di chuột qua */
+.cart-button:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* === Icon chuông === */
+.cart-button .bi-bell {
+    font-size: 24px; /* Kích thước icon */
+}
+
+/* === Badge (số thông báo) === */
+.cart-button .badge {
+    /* Định vị tuyệt đối so với nút cha (.cart-button) */
+    position: absolute;   
+    top: 0;
+    right: 0;
+    
+    /* Tinh chỉnh vị trí để badge nằm lệch ra ngoài một chút */
+    transform: translate(20%, -20%); 
+
+    /* Kiểu dáng badge */
+    background-color: #dc3545; /* Màu đỏ nổi bật */
+    color: white;
+    border-radius: 50%; /* Bo tròn */
+    border: 2px solid white; /* Tạo viền trắng tách biệt với icon */
+    
+    /* Kích thước và căn chỉnh số bên trong */
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* css gio hang*/
 
 .cart-button {
@@ -339,6 +400,8 @@
     transition: background-color 0.2s ease;
 }
 
+
+
 /* Hiệu ứng khi di chuột qua nút */
 .cart-button:hover {
     background-color: #e2e6ea;
@@ -347,7 +410,7 @@
 /* Tùy chỉnh kích thước icon */
 .cart-button .bi-basket {
     font-size: 24px; /* Kích thước icon */
-    color: #333;
+    color: #ffffff;
 }
 
 /* --- Định vị và tạo kiểu cho badge (số lượng) --- */

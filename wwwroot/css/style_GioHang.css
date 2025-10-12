@@ -1,0 +1,325 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cart-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.cart-layout {
+    display: flex;
+    gap: 2rem;
+}
+
+.cart-left {
+    flex: 2; /* Chiếm 2/3 không gian */
+}
+
+.cart-right {
+    flex: 1; /* Chiếm 1/3 không gian */
+}
+
+/* --- Kiểu dáng sản phẩm --- */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-name {
+    font-weight: 500;
+    margin: 0;
+}
+
+.product-size {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #c81f27; /* Màu đỏ */
+    min-width: 100px;
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+}
+
+.quantity-input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* --- Ghi chú đơn hàng --- */
+.order-notes {
+    margin-top: 2rem;
+}
+
+.order-notes label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.order-notes textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* --- Tóm tắt đơn hàng (cột phải) --- */
+.order-summary {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.schedule-section h4, .total-section h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.schedule-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.vat-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.vat-option input {
+    margin-right: 0.5rem;
+}
+
+.total-section {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.total-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #c81f27;
+    margin: 0.5rem 0;
+}
+
+.vat-note {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.checkout-button {
+    width: 100%;
+    background-color: #b22830;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.checkout-button:hover {
+    background-color: #9a2228;
+}
+
+.brand-logo {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 992px) {
+    .cart-layout {
+        flex-direction: column;
+    }
+}
+
+/* Sản phẩm khác */
+/* style.css */
+
+/* === KIỂU DÁNG CARD KÍCH THƯỚC 17x15 === */
+
+.product-card {
+    /* 1. Kích thước cố định */
+    width: 15rem;  /* ~240px */
+    height: 17rem; /* ~272px */
+    
+    /* 2. Bố cục dọc */
+    display: flex;
+    flex-direction: column; /* Các mục xếp chồng lên nhau */
+
+    /* 3. Kiểu dáng card */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === Các thành phần bên trong card === */
+
+/* Vùng chứa ảnh */
+.card-image-container {
+    height: 160px; /* Chiều cao cố định cho ảnh */
+    flex-shrink: 0; /* Ngăn ảnh bị co lại */
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Thân card chứa thông tin */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    flex-grow: 1; /* Quan trọng: Giúp body lấp đầy không gian còn lại */
+}
+
+.brand-name {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 4px 0;
+    /* Đảm bảo tên sản phẩm không phá vỡ layout */
+    min-height: 36px; /* Giữ không gian cho 2 dòng chữ */
+}
+
+/* Footer chứa giá và nút bấm */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Quan trọng: Luôn đẩy footer xuống đáy card */
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.add-btn {
+    background-color: #c81f27;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+/* Có thể hiện lại badge nếu muốn */
+.bestseller-badge {
+    display: none; 
+}
