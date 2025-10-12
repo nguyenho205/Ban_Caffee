@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ban_Caffee</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Ban_Caffee.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyZ88n1r6AKnU8zXR0j6ozlKtyKx2Zq+caSFfbtHnFSLhd6YhS/5YyJ2Z+7e0pH7a5o6d3T3V9zzTtmI3UksdKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span>My Love Coffee</span>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm sản phẩm, đồ uống...">
+            <button><i class="bi bi-search"></i></button>
+        </div>
+
+        <div class="header-icons">
+            <div class="icon">
+                <i class="bi bi-bell"></i>
+                <span class="badge">2</span>
+            </div>
+
+            <div class="icon">
+                <i class="bi bi-basket"></i>
+                <span class="badge">3</span>
+            </div>
+
+            <div class="dropdown">
+            <button class="dropbtn">
+                <i class="bi bi-person"></i>
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Thông tin cá nhân</a>
+                <a href="#">Đăng xuất</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+   <div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12 col-lg-3 order-lg-1 px-0"> 
+            <nav>
+                <aside class="sidebar">
+                    
+                    <h3>Danh mục sản phẩm</h3> 
+                    
+                    <div class="list-group list-group-flush mb-3">
+                        <a href="" class="list-group-item list-group-item-action">Trang chủ</a>
+                    </div>
+                    
+                    <div class="accordion accordion-flush" id="productCategoriesAccordion">
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingBeverages">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseBeverages" aria-expanded="false" aria-controls="flush-collapseBeverages">
+                                    Đồ uống
+                                </button>
+                            </h2>
+                            <div id="flush-collapseBeverages" class="accordion-collapse collapse" aria-labelledby="flush-headingBeverages" data-bs-parent="#productCategoriesAccordion">
+                                <div class="accordion-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Arabica</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Robusta</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Liberica</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Excelsa</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Xanh</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Đen</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Oolong</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFood">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFood" aria-expanded="false" aria-controls="flush-collapseFood">
+                                    Đồ ăn
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFood" class="accordion-collapse collapse" aria-labelledby="flush-headingFood" data-bs-parent="#productCategoriesAccordion">
+                                <div class="accordion-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Bánh Kem</a></li> 
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Bánh Mì</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingProducts">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProducts" aria-expanded="false" aria-controls="flush-collapseProducts">
+                                    Sản phẩm
+                                </button>
+                            </h2>
+                            <div id="flush-collapseProducts" class="accordion-collapse collapse" aria-labelledby="flush-headingProducts" data-bs-parent="#productCategoriesAccordion">
+                                <div class="accordion-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Gói</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Cà Phê Hộp</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Rang Nhẹ</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Rang Vừa</a></li>
+                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Rang Đậm</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </aside>
+            </nav>
+        </div>
+
+
+        
+        <main role="main" class="col-12 col-lg-9 pb-3 order-lg-2">
+            <div class="content">
+                @RenderBody()
+            </div>
+        </main>
+
+    </div>
+</div>
+
+   <button class="icon-button send-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+    </svg>
+    </button>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
