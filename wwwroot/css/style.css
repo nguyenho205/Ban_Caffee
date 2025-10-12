@@ -456,3 +456,46 @@
             color: white !important;
         }
 
+/* CSS cho nút chatbot */
+        .coffee-chatbot-button {
+            /* === Vị trí === */
+            position: fixed; /* Luôn nổi trên màn hình */
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000; /* Đảm bảo nút nằm trên các phần tử khác */
+
+            /* === Kiểu dáng === */
+            width: 60px;
+            height: 60px;
+            background-color: #e99b83; /* Màu nâu cà phê đậm */
+            color: white; /* Màu của icon */
+            border-radius: 50%; /* Bo tròn để tạo hình tròn */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tạo bóng đổ cho nút */
+            text-decoration: none; /* Bỏ gạch chân của thẻ <a> */
+            
+            /* === Căn giữa icon === */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* === Hiệu ứng === */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Hiệu ứng khi di chuột qua */
+        .coffee-chatbot-button:hover {
+            transform: scale(1.1); /* Phóng to nút một chút */
+        }
+
+        /* Kích thước icon bên trong */
+        .coffee-chatbot-button svg {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Nội dung demo để bạn có thể cuộn trang */
+        body {
+            height: 2000px;
+            font-family: sans-serif;
+            padding: 20px;
+        }
