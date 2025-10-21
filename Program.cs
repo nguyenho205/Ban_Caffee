@@ -1,4 +1,29 @@
+using System.Text.Json;
+using Ban_Caffee.Models;
 var builder = WebApplication.CreateBuilder(args);
+
+// 1. Lấy đường dẫn đến thư mục wwwroot
+string webRootPath = builder.Environment.WebRootPath;
+
+// 2. Kết hợp với đường dẫn con "json" và tên file
+string jsonFilePath = Path.Combine(webRootPath, "json", "danhmuc.json");
+
+// Đoạn code mới trong Program.cs
+string jsonText = File.ReadAllText(jsonFilePath);
+var danhMucList = JsonSerializer.Deserialize<List<DanhMuc>>(jsonText);
+
+// Thêm kiểm tra null tại đây!
+if (danhMucList == null)
+{
+    // Hoặc là đăng ký một danh sách rỗng, hoặc là báo lỗi
+    throw new InvalidOperationException("Không thể đọc và chuyển đổi tệp danhmuc.json.");
+    // Hoặc: danhMucList = new List<DanhMuc>();
+}
+
+builder.Services.AddSingleton(danhMucList);
+
+//Đăng ký List<DanhMuc> này làm dịch vụ Singleton
+builder.Services.AddSingleton(danhMucList);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

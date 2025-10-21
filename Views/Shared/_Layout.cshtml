@@ -52,6 +52,10 @@
    <div class="container-fluid">
     <div class="row">
 
+        @* Thêm dòng này ở đầu file _Layout.cshtml *@
+        @inject List<DanhMuc> AllCategories
+
+
         <div class="col-12 col-lg-3 order-lg-1 px-0"> 
             <nav>
                 <aside class="sidebar">
@@ -62,64 +66,45 @@
                         <a href="~/Home/Index" class="list-group-item list-group-item-action">Trang chủ</a>
                     </div>
                     
+                    @{
+                        // Nhóm các danh mục theo "loaiDm" (Đồ uống, Đồ ăn, ...)
+                        var categoriesByType = AllCategories.GroupBy(dm => dm.LoaiDm);
+                        int accordionCounter = 0; // Dùng để tạo ID duy nhất
+                    }
+
                     <div class="accordion accordion-flush" id="productCategoriesAccordion">
                         
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingBeverages">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseBeverages" aria-expanded="false" aria-controls="flush-collapseBeverages">
-                                    Đồ uống
-                                </button>
-                            </h2>
-                            <div id="flush-collapseBeverages" class="accordion-collapse collapse" aria-labelledby="flush-headingBeverages" data-bs-parent="#productCategoriesAccordion">
-                                <div class="accordion-body p-0">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Arabica</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Robusta</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Liberica</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Excelsa</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Xanh</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Đen</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Oolong</a></li>
-                                    </ul>
+                        @foreach (var group in categoriesByType)
+                        {
+                            string groupId = $"flush-collapse-{accordionCounter}";
+                            string headingId = $"flush-heading-{accordionCounter}";
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="@headingId">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@groupId" aria-expanded="false" aria-controls="@groupId">
+                                        @group.Key  @* Đây là "Đồ uống", "Đồ ăn", "Sản phẩm khác" *@
+                                    </button>
+                                </h2>
+                                <div id="@groupId" class="accordion-collapse collapse" aria-labelledby="@headingId" data-bs-parent="#productCategoriesAccordion">
+                                    <div class="accordion-body p-0">
+                                        <ul class="list-group list-group-flush">
+                                            @foreach (var item in group)
+                                            {
+                                                <li class="list-group-item">
+                                                    @* Thay đổi href theo logic của bạn, ví dụ: /Products/Category/@item.MaDm *@
+                                                    <a href="#" class="text-decoration-none text-dark">
+                                                        @item.TenDm @* Đây là "Cà phê", "Trà Sữa", "Bánh Ngọt",... *@
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingFood">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFood" aria-expanded="false" aria-controls="flush-collapseFood">
-                                    Đồ ăn
-                                </button>
-                            </h2>
-                            <div id="flush-collapseFood" class="accordion-collapse collapse" aria-labelledby="flush-headingFood" data-bs-parent="#productCategoriesAccordion">
-                                <div class="accordion-body p-0">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Bánh Kem</a></li> 
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Bánh Mì</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingProducts">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseProducts" aria-expanded="false" aria-controls="flush-collapseProducts">
-                                    Sản phẩm
-                                </button>
-                            </h2>
-                            <div id="flush-collapseProducts" class="accordion-collapse collapse" aria-labelledby="flush-headingProducts" data-bs-parent="#productCategoriesAccordion">
-                                <div class="accordion-body p-0">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Trà Gói</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Cà Phê Hộp</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Rang Nhẹ</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Rang Vừa</a></li>
-                                        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Rang Đậm</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                            
+                            accordionCounter++;
+                        }
+                        
                     </div>
                     
                 </aside>
