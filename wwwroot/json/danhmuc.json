@@ -1,0 +1,56 @@
+[
+    {
+        "maDm": "DM_AK     ",
+        "tenDm": "Món Ăn Kèm",
+        "loaiDm": "Đồ ăn",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_AV     ",
+        "tenDm": "Đồ Ăn Vặt",
+        "loaiDm": "Đồ ăn",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_BN     ",
+        "tenDm": "Bánh Ngọt",
+        "loaiDm": "Đồ ăn",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_CF     ",
+        "tenDm": "Cà phê",
+        "loaiDm": "Đồ uống",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_SPK01  ",
+        "tenDm": "Cà Phê Hạt & Bột",
+        "loaiDm": "Sản phẩm khác",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_SPK02  ",
+        "tenDm": "Ly & Cốc Thương Hiệu",
+        "loaiDm": "Sản phẩm khác",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_SPK03  ",
+        "tenDm": "Dụng Cụ Pha Chế",
+        "loaiDm": "Sản phẩm khác",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_TS     ",
+        "tenDm": "Trà Sữa",
+        "loaiDm": "Đồ uống",
+        "sanphams": []
+    },
+    {
+        "maDm": "DM_TT     ",
+        "tenDm": "Trà Trái Cây",
+        "loaiDm": "Đồ uống",
+        "sanphams": []
+    }
+]
