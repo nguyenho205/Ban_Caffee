@@ -1,34 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Detail";
-}
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~\css\styledetail.css" rel="stylesheet" />
-<div class="container py-4">
-    
-
+﻿<div class="container py-4">
     <div class="row g-4">
-        <!-- Ảnh sản phẩm -->
-        <div class="col-lg-6 col-md-12 text-center">
-            <img src="https://product.hstatic.net/1000075078/product/ca-phe-den-da_bf32b13c89fa49c29ec5b193bdbf0b6d_master.png"
-                 class="img-fluid rounded shadow-sm"
-                 alt="Phin Đen Đá" />
+        <div class="col-md-4">
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <img id="mainImage" src="~/img/anh1.jpg" alt="...." class="img-fluid rounded" style="border: 1px solid #ccc;">
+                </div>
+                <div class="row g-2">
+                    <div class="col-3">
+                        <img class="img-thumbnail img-fluid thumbnail-item" src="~/img/anh1.jpg" data-full-src="~/img/anh1.jpg" alt="Ảnh 1" style="max-width: 80px; cursor: pointer;">
+                    </div>
+                    
+                    <div class="col-3">
+                        <img class="img-thumbnail img-fluid thumbnail-item" src="~/img/image.png" data-full-src="~/img/image.png" alt="Ảnh 1" style="max-width: 80px; cursor: pointer;">
+                    </div>
+                </div>
+                
+            </div>
         </div>
 
-        <!-- Thông tin sản phẩm -->
-        <div class="col-lg-6 col-md-12">
-            <h6 class="text-secondary mb-1">Highlands Coffee</h6>
+
+        <div class="col-md-8">
+            <h6 class="text-secondary mb-1">My love Coffee</h6>
             <h3 class="fw-bold">Phin Đen Đá</h3>
+
             <p>
-                <span class="text-dark">Tình trạng:</span> <span class="text-success fw-semibold">Còn hàng</span> |
-                <span class="text-dark">Mã SKU:</span> <span class="text-danger">PVN31</span>
+                <span class="text-dark">Tình trạng:</span> <span class="text-success fw-semibold">Còn hàng</span>
             </p>
 
             <h2 class="text-danger fw-bold mb-4">29.000đ</h2>
 
-            
-
-            <!-- Số lượng -->
             <div class="mb-4">
                 <p class="fw-semibold mb-2">Số lượng:</p>
                 <div class="input-group" style="width: 140px;">
@@ -38,15 +38,14 @@
                 </div>
             </div>
 
-            <!-- Nút hành động -->
             <div class="d-flex gap-3">
-                <button class="btn btn-danger px-4 fw-bold">MUA NGAY</button>
-                <button class="btn btn-outline-danger px-4 fw-bold">THÊM VÀO GIỎ</button>
+                <button class="btn btn-coffee-accent px-4 fw-bold">MUA NGAY</button>
+                
+                <button class="btn btn-outline-coffee px-4 fw-bold">THÊM VÀO GIỎ</button>
             </div>
         </div>
     </div>
 
-    <!-- Mô tả sản phẩm -->
     <div class="mt-5">
         <h4 class="fw-bold border-bottom pb-2">Mô tả sản phẩm</h4>
         <p class="mt-3">
@@ -56,24 +55,23 @@
         </p>
     </div>
 
-    <!-- Sản phẩm cùng loại -->
     <div class="mt-5">
         <h4 class="text-danger fw-bold mb-3">Sản phẩm cùng loại</h4>
         <div class="row g-3">
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <img src="" class="img-fluid rounded mb-2">
+                <img src="~/img/image.png" class="img-fluid rounded mb-2">
                 <p class="mb-0 text-uppercase text-secondary" style="font-size:13px;">My Love Coffee</p>
                 <p class="fw-semibold mb-1">Espresso Nóng</p>
                 <p class="text-danger fw-bold">45.000đ</p>
             </div>
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <img src="" class="img-fluid rounded mb-2">
+                <img src="~/img/anh1.jpg" class="img-fluid rounded mb-2">
                 <p class="mb-0 text-uppercase text-secondary" style="font-size:13px;">My Love Coffee</p>
                 <p class="fw-semibold mb-1">Latte Nóng</p>
                 <p class="text-danger fw-bold">65.000đ</p>
             </div>
             <div class="col-6 col-md-4 col-lg-2 text-center">
-                <img src="" class="img-fluid rounded mb-2">
+                <img src="~/img/image.png" class="img-fluid rounded mb-2">
                 <p class="mb-0 text-uppercase text-secondary" style="font-size:13px;">My Love Coffee</p>
                 <p class="fw-semibold mb-1">Bạc Xỉu Đá</p>
                 <p class="text-danger fw-bold">29.000đ</p>
@@ -81,4 +79,3 @@
         </div>
     </div>
 </div>
-

@@ -1,55 +1,107 @@
-﻿/* Responsive tùy chỉnh thêm */
-.product-detail img {
-    object-fit: cover;
-    min-height: 300px;
+﻿/*
+=========================================
+  TYPOGRAPHY (TIÊU ĐỀ & VĂN BẢN)
+=========================================
+*/
+
+/* Tiêu đề sản phẩm chính (Phin Đen Đá) */
+.col-md-8 h3.fw-bold {
+  color: #6b4f37;
 }
 
-@media (max-width: 767.98px) {
-    .product-detail img {
-        border-bottom: 2px solid #eee;
-    }
-
-    .product-detail .card-body {
-        text-align: center;
-    }
-
-    .product-detail .btn {
-        width: 100%;
-        margin-top: 10px;
-    }
+/* Giá sản phẩm (Giữ màu đỏ/cam nổi bật) */
+h2.text-danger,
+.text-danger {
+  color: #6b4f37 !important;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .product-detail {
-        margin: 0 10px;
-    }
-
-        .product-detail img {
-            height: 100%;
-        }
+/* Tiêu đề các mục (Mô tả, Sản phẩm cùng loại) */
+.mt-5 h4.fw-bold {
+  color: #6b4f37 !important;
 }
 
-@media (min-width: 992px) {
-    .product-detail img {
-        max-height: 450px;
-    }
-}
-/* Responsive cải tiến */
-@media (max-width: 767px) {
-    h3 {
-        font-size: 1.4rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    .btn {
-        font-size: 0.9rem;
-    }
-
-    img.img-fluid {
-        width: 90%;
-    }
+/* Đường viền dưới tiêu đề */
+.border-bottom {
+  border-bottom-color: #6b4f37 !important;
 }
 
+/*
+=========================================
+  BUTTONS (NÚT BẤM)
+=========================================
+*/
+
+/* --- Nút Mua Ngay (Accent Color) --- */
+/* Class mới: .btn-coffee-accent */
+.btn-coffee-accent {
+  background-color: #6b4f37;
+  color: #ffffff;
+  border: 1px solid #6b4f37;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-coffee-accent:hover {
+  background-color: #6b4f37;
+  border-color: #6b4f37;
+  color: #ffffff;
+}
+
+/* --- Nút Thêm Vào Giỏ (Main Color Outline) --- */
+/* Class mới: .btn-outline-coffee */
+.btn-outline-coffee {
+  background-color: transparent;
+  color: #6b4f37;
+  border: 1px solid #6b4f37;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-coffee:hover {
+  background-color: #6b4f37;
+  color: #ffffff;
+}
+
+/*
+=========================================
+  INPUT GROUP (NÚT +/- VÀ Ô SỐ LƯỢNG)
+=========================================
+*/
+
+/* Ghi đè .btn-outline-secondary mặc định của Bootstrap */
+.input-group .btn.btn-outline-secondary {
+  border-color: #6b4f37;
+  color: #6b4f37;
+}
+
+.input-group .btn.btn-outline-secondary:hover {
+  background-color: #6b4f37;
+  color: #ffffff;
+}
+
+/* Ô input số lượng */
+.input-group .form-control {
+  border-color: #6b4f37;
+}
+
+/* Màu viền khi click (focus) vào ô số lượng */
+.input-group .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(107, 79, 55, 0.25);
+  border-color: #6b4f37;
+}
+
+/*
+=========================================
+  IMAGES (HÌNH ẢNH)
+=========================================
+*/
+
+/* Viền cho ảnh chính */
+#mainImage.rounded {
+  border: 1px solid #6b4f37 !important;
+}
+
+/* Viền cho các ảnh thumbnail */
+.img-thumbnail {
+  border-color: #6b4f37;
+}

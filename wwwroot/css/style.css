@@ -647,3 +647,47 @@
         text-align: center;
     }
 }
+
+.btn-coffee{
+    background-color: #6b4f37;
+    border-color: #6b4f37;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-coffee:hover{
+    background-color: #47311e;
+    border-color: #47311e;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-Them{
+    background-color: #ffffff;
+    color: #0c0c0c;
+    border: 1px solid #6b4f37;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-Them:hover{
+    background-color: #aa8a6a;
+    border-color: #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.card{
+    scale: calc(1.2);
+    border-radius: 10px;
+    transition: all 0.3s ease ;
+    
+}
+
+.card:hover{
+    
+    box-shadow: 0 8px 20px rgba(107,79,55,0.25);
+    transform: translateY(-5px);
+}

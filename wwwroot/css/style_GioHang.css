@@ -79,7 +79,7 @@ body {
 
 .product-price {
     font-weight: 700;
-    color: #c81f27; /* Màu đỏ */
+    color: #6b4f37; /* Màu đỏ */
     min-width: 100px;
     text-align: right;
     margin-right: 2rem;
@@ -186,7 +186,7 @@ body {
 .total-price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #c81f27;
+    color: #6b4f37;
     margin: 0.5rem 0;
 }
 
@@ -197,7 +197,7 @@ body {
 
 .checkout-button {
     width: 100%;
-    background-color: #b22830;
+    background-color: #6b4f37;
     color: white;
     border: none;
     padding: 1rem;
@@ -209,7 +209,7 @@ body {
 }
 
 .checkout-button:hover {
-    background-color: #9a2228;
+    background-color: #6b4f37;
 }
 
 .brand-logo {
@@ -305,7 +305,7 @@ body {
 }
 
 .add-btn {
-    background-color: #c81f27;
+    background-color: #6b4f37;
     color: white;
     width: 30px;
     height: 30px;
