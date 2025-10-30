@@ -1,34 +1,42 @@
 
-
 <div class="container">
     <div class="login-container mt-4" style="width: 400px; margin:auto">
         <div class="card shadow-lg p-3">
-            <h3 class="card-title text-center fw-bold  mb-4">Đăng ký</h3>
+            <h3 class="card-title text-center fw-bold mb-4">Đăng ký</h3>
+
             @using (Html.BeginForm("RegisterSubmit", "User", FormMethod.Post))
             {
                 <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Tên khách hàng</label>
-                    <input type="email" name="name" class="form-control" id="registerName" required>
+                    <label for="registerName" class="form-label">Tên khách hàng</label>
+                    <input type="text" name="Name" class="form-control" id="registerName" required>
                 </div>
+
                 <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" id="registerEmail" required>
+                    <label for="registerEmail" class="form-label">Email</label>
+                    <input type="email" name="Email" class="form-control" id="registerEmail" required>
                 </div>
+
                 <div class="mb-3">
-                    <label for="loginPassword" class="form-label">Mật khẩu</label>
-                    <input type="password" name="password" class="form-control" id="registerPassword" required>
+                    <label for="registerPassword" class="form-label">Mật khẩu</label>
+                    <input type="password" name="Password" class="form-control" id="registerPassword" required>
                 </div>
+
                 <div class="mb-3">
-                    <label for="loginPassword" class="form-label">Xác nhận mật khẩu</label>
-                    <input type="password" name="confirmpassword" class="form-control" id="confirmRegisterPassword" required>
+                    <label for="confirmRegisterPassword" class="form-label">Xác nhận mật khẩu</label>
+                    <input type="password" name="ConfirmPassword" class="form-control" id="confirmRegisterPassword" required>
                 </div>
+
                 <button type="submit" class="btn btn-coffee w-100 mb-3">ĐĂNG KÝ</button>
+
                 <p class="text-center">
-                    Bạn đã có tài khoản? <a href="@Url.Action(action: "Login", "User")" class="text-decoration-none fw-bold">Đăng nhập</a>
+                    Bạn đã có tài khoản?
+                    <a href="@Url.Action("Login", "User")" class="text-decoration-none fw-bold">Đăng nhập</a>
                 </p>
             }
-
-
+            @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center mt-3">@ViewBag.Error</div>
+        }
         </div>
     </div>
 </div>
