@@ -1,7 +1,29 @@
+<style>
+
+
+    .btn-coffee {
+background-color: #6b4f37;
+color: #fff;
+border: none;
+}
+
+.btn-coffee:hover {
+background-color: #5b412f; /* màu đậm hơn khi hover */
+color: #fff;
+}
+h3.card-title {
+    color: #6b4f37;
+}
+a{
+    color: #6b4f37;
+}
+
+</style>
+
 <div class="container">
     <div class="login-container mt-4" style="width: 400px; margin:auto">
         <div class="card shadow-lg p-3">
-            <h3 class="card-title text-center fw-bold text-primary mb-4">Đăng ký</h3>
+            <h3 class="card-title text-center fw-bold  mb-4">Đăng ký</h3>
             @using (Html.BeginForm("RegisterSubmit", "User", FormMethod.Post))
             {
                 <div class="mb-3">
@@ -20,7 +42,7 @@
                     <label for="loginPassword" class="form-label">Xác nhận mật khẩu</label>
                     <input type="password" name="confirmpassword" class="form-control" id="confirmRegisterPassword" required>
                 </div>
-                <button type="submit" class="btn btn-primary w-100 mb-3">ĐĂNG NHẬP</button>
+                <button type="submit" class="btn btn-coffee w-100 mb-3">ĐĂNG NHẬP</button>
                 <p class="text-center">
                     Bạn đã có tài khoản? <a href="@Url.Action(action: "Login", "User")" class="text-decoration-none fw-bold">Đăng ký ngay</a>
                 </p>
