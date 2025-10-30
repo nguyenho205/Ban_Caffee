@@ -679,14 +679,14 @@
     font-weight: bold;
     transition: all 0.3s ease;
 }
-.card{
+.card_ho{
     scale: calc(1.2);
     border-radius: 10px;
     transition: all 0.3s ease ;
     
 }
 
-.card:hover{
+.card_ho:hover{
     
     box-shadow: 0 8px 20px rgba(107,79,55,0.25);
     transform: translateY(-5px);
