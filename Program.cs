@@ -1,6 +1,12 @@
-using System.Text.Json;
 using Ban_Caffee.Models;
+using Ban_Caffee.Services;
+using System.Text.Json;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient<ICustomerAuthService, CustomerAuthService>(client =>
+{
+    client.BaseAddress = new Uri("https://your-api-domain.com");
+});
 
 // 1. Lấy đường dẫn đến thư mục wwwroot
 string webRootPath = builder.Environment.WebRootPath;

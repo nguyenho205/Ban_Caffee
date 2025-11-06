@@ -1,84 +1,89 @@
+using Ban_Caffee.Models;
+using Ban_Caffee.Models.Dto;
+using Ban_Caffee.Models.ViewModel;
+using Ban_Caffee.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Microsoft.AspNetCore.Mvc;
-using Ban_Caffee.Models;
-
 namespace Ban_Caffee.Controllers
 {
     public class UserController : Controller
     {
-        
+
         // GET: User
-        public ActionResult Login()
+        private readonly ICustomerAuthService _customerAuthService;
+
+        public UserController(ICustomerAuthService customerAuthService)
+        {
+            _customerAuthService = customerAuthService;
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View(); 
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(string Email, string Password)
+        {
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            {
+                ModelState.AddModelError("", " Email hoặc mật khẩu không đúng.");
+                return View();
+            }
+
+            var model = new CustomerLoginViewModel()
+            {
+                Email = Email,
+                Password = Password
+            };
+
+            var tokenData = await _customerAuthService.LoginAsync(model);
+
+            if (tokenData != null && !string.IsNullOrEmpty(tokenData.AccessToken))
+            {
+                HttpContext.Session.SetString("CustomerAuthToken", tokenData.AccessToken);
+                if (!string.IsNullOrEmpty(tokenData.CustomerName))
+                    HttpContext.Session.SetString("CustomerName", tokenData.CustomerName);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            ModelState.AddModelError("", "Email hoặc mật khẩu không đúng.");
+            return View();
+        }
+        //dang ky
+        [HttpGet]
+        public IActionResult Register()
         {
             return View();
         }
-     
+
         [HttpPost]
-    public ActionResult LoginSubmit(string email, string password)
-    {
-        
-         
-            string validEmail = "a@gmail.com";
-            string validPassword = "123456";
+        public async Task<IActionResult> Register(CustomerRegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
 
-            // Kiểm tra hợp lệ
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            if (model.Password != model.ConfirmPassword)
             {
-                ViewBag.Error = "Vui lòng nhập đầy đủ thông tin!";
-                return View("Login");
+                ModelState.AddModelError("ConfirmPassword", "Mật khẩu xác nhận không khớp.");
+                return View(model);
             }
 
-            if (email != validEmail || password != validPassword)
+            var result = await _customerAuthService.RegisterAsync(model);
+
+            if (result != null && result.IsSuccess)
             {
-                ViewBag.Error = "Email hoặc mật khẩu không chính xác!";
-                return View("Login");
+                TempData["RegisterSuccess"] = "Đăng ký thành công! Vui lòng đăng nhập.";
+                return RedirectToAction("Login", "User");
             }
 
-            // ✅ Thành công → chuyển về Home/Index
-            TempData["Success"] = "Đăng nhập thành công!";
-            return RedirectToAction("Index", "Home");
-    }
-    
-
-        private static List<User> users = new List<User>
-    {
-        new User { Name = "Nguyen Van A", Email = "a@gmail.com", Password = "123456" }
-    };
-
-    [HttpGet]
-    public IActionResult Register()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    public IActionResult RegisterSubmit(string Name, string Email, string Password, string ConfirmPassword)
-    {
-        // Kiểm tra trùng email
-        var existingUser = users.FirstOrDefault(u => u.Email.Equals(Email, StringComparison.OrdinalIgnoreCase));
-        if (existingUser != null)
-        {
-            ViewBag.Error = "Email này đã được sử dụng!";
-            return View("Register");
+            ModelState.AddModelError("", result?.Message ?? "Đăng ký thất bại. Vui lòng thử lại!");
+            return View(model);
         }
-
-        // Kiểm tra khớp mật khẩu
-        if (Password != ConfirmPassword)
-        {
-            ViewBag.Error = "Mật khẩu xác nhận không khớp!";
-            return View("Register");
-        }
-
-        // Thêm tài khoản mới
-        users.Add(new User { Name = Name, Email = Email, Password = Password });
-
-        // Redirect về trang chủ sau khi đăng ký thành công
-        return RedirectToAction("Index", "Home");
     }
 
 
-    }
 }

@@ -1,42 +1,55 @@
+@model Ban_Caffee.Models.ViewModel.CustomerRegisterViewModel
 
 <div class="container">
     <div class="login-container mt-4" style="width: 400px; margin:auto">
         <div class="card shadow-lg p-3">
             <h3 class="card-title text-center fw-bold mb-4">Đăng ký</h3>
 
-            @using (Html.BeginForm("RegisterSubmit", "User", FormMethod.Post))
+            @using (Html.BeginForm("Register", "User", FormMethod.Post))
             {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
                 <div class="mb-3">
-                    <label for="registerName" class="form-label">Tên khách hàng</label>
-                    <input type="text" name="Name" class="form-control" id="registerName" required>
+                    <label for="Email" class="form-label">Email</label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Nhập email của bạn" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="registerEmail" class="form-label">Email</label>
-                    <input type="email" name="Email" class="form-control" id="registerEmail" required>
+                    <label for="Password" class="form-label">Mật khẩu</label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="registerPassword" class="form-label">Mật khẩu</label>
-                    <input type="password" name="Password" class="form-control" id="registerPassword" required>
+                    <label for="ConfirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="confirmRegisterPassword" class="form-label">Xác nhận mật khẩu</label>
-                    <input type="password" name="ConfirmPassword" class="form-control" id="confirmRegisterPassword" required>
+                    <label for="FullName" class="form-label">Họ và tên</label>
+                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="Phone" class="form-label">Số điện thoại</label>
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
                 </div>
 
                 <button type="submit" class="btn btn-coffee w-100 mb-3">ĐĂNG KÝ</button>
 
                 <p class="text-center">
-                    Bạn đã có tài khoản?
-                    <a href="@Url.Action("Login", "User")" class="text-decoration-none fw-bold">Đăng nhập</a>
+                    Đã có tài khoản? <a href="@Url.Action("Login", "User")" class="fw-bold">Đăng nhập</a>
                 </p>
             }
-            @if (ViewBag.Error != null)
-        {
-            <div class="alert alert-danger text-center mt-3">@ViewBag.Error</div>
-        }
+
+            @if (TempData["RegisterSuccess"] != null)
+            {
+                <div class="alert alert-success text-center mt-3">@TempData["RegisterSuccess"]</div>
+            }
         </div>
     </div>
 </div>

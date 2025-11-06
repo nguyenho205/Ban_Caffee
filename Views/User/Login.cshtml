@@ -5,15 +5,19 @@
     <div class="login-container mt-4" style="width: 400px; margin:auto">
         <div class="card shadow-lg p-3">
             <h3 class="card-title text-center fw-bold mb-4">Đăng nhập</h3>
-            @using (Html.BeginForm("LoginSubmit", "User", FormMethod.Post))
+            @using (Html.BeginForm("Login", "User", FormMethod.Post))
             {
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger text-center" })
                 <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" id="loginEmail" required>
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" name=Email" class="form-control" id="Email" required>
+                    @Html.ValidationMessage("Email", "", new { @class = "text-danger" })
                 </div>
+
                 <div class="mb-3">
-                    <label for="loginPassword" class="form-label">Mật khẩu</label>
-                    <input type="password" name="password" class="form-control" id="loginPassword" required>
+                    <label for="Password" class="form-label">Mật khẩu</label>
+                    <input type="password" name="Password" class="form-control" id="Password" required />
+                    @Html.ValidationMessage("Password", "", new { @class = "text-danger" })
                 </div>
                 <button type="submit" class="btn btn-coffee w-100 mb-3">ĐĂNG NHẬP</button>
             
