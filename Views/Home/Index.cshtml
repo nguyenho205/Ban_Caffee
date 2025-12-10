@@ -1,5 +1,4 @@
-﻿@model Ban_Caffee.Models.SanPham
-
+﻿@model List<Ban_Caffee.Models.Product>
 
 <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
@@ -31,20 +30,47 @@
 <div class=" row mt-4">
   <h1 class="cart-title">Sản phẩm </h1>
 
+@if (Model != null && Model.Any())
+{
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card card_ho h-100">
+                    @if (string.IsNullOrEmpty(item.Img))
+                    {
+                        <img src="/images/default-coffee.png" class="card-img-top" alt="No Image">
+                    }
+                    else
+                    {
+                        <img src="@item.Img" class="card-img-top" alt="@item.ProductName">
+                    }
 
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-      <div class="col">
-          <div class="card card_ho h-100">
-              <img src="~/img/anh1.jpg" class="card-img-top" alt="Lỗi ảnh">
-              <div class="card-body">
-                  <h5 class="card-title">Cà phê</h5>
-                  <p class="text-danger fw-bold mb-4">45.000đ</p>
-                  <a href="@Url.Action("Detail", "Home")" class="btn btn-coffee">Xem chi tiết</a>
-                  <div class="d-grid gap-2 mt-2">
-                  <a href="#" class="btn btn-Them">Thêm giỏ hàng</a>
-                  </div>
-              </div>
-          </div>
-      </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ProductName</h5>
+                        
+                        <p class="text-danger fw-bold mb-4">@item.Price.ToString("N0") đ</p>
+                        
+                        <p class="card-text text-muted">@item.Decription</p>
+
+                        <a href="@Url.Action("Detail", "Home", new { id = item.ProductId })" class="btn btn-coffee">Xem chi tiết</a>
+                        
+                        <div class="d-grid gap-2 mt-2">
+                            <a href="#" class="btn btn-Them">Thêm giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        
     </div>
+}
+else
+{
+    <div class="alert alert-warning text-center" role="alert">
+        Không có sản phẩm nào để hiển thị.
+    </div>
+}
+  
 </div>

@@ -1,4 +1,7 @@
-﻿<div class="container py-4">
+﻿@model List<Ban_Caffee.Models.Product>
+
+@foreach (var item in Model){
+<div class="container py-4">
     <div class="row g-4">
         <div class="col-md-4">
             <div class="product-gallery">
@@ -19,15 +22,15 @@
         </div>
 
 
-        <div class="col-md-8">
+    <div class="col-md-8">
             <h6 class="text-secondary mb-1">My love Coffee</h6>
-            <h3 class="fw-bold">Phin Đen Đá</h3>
+            <h3 class="fw-bold">@item.ProductName</h3>
 
             <p>
-                <span class="text-dark">Tình trạng:</span> <span class="text-success fw-semibold">Còn hàng</span>
+                <span class="text-dark">Tình trạng:</span> <span class="text-success fw-semibold">@item.Status</span>
             </p>
 
-            <h2 class="text-danger fw-bold mb-4">29.000đ</h2>
+            <h2 class="text-danger fw-bold mb-4">@item.Price.ToString("N0")</h2>
 
             <div class="mb-4">
                 <p class="fw-semibold mb-2">Số lượng:</p>
@@ -44,17 +47,19 @@
                 <button class="btn btn-outline-coffee px-4 fw-bold">THÊM VÀO GIỎ</button>
             </div>
         </div>
-    </div>
+ 
+    
+        
 
     <div class="mt-5">
         <h4 class="fw-bold border-bottom pb-2">Mô tả sản phẩm</h4>
         <p class="mt-3">
-            Phin Đen Đá dành cho những tín đồ cà phê đích thực! Hương vị cà phê truyền thống được phối trộn độc đáo tại Highlands.
-            Cà phê đậm đà pha từ Phin, cho thêm 1 thìa đường, mang đến vị cà phê đậm đà chất Phin.
-            Đặt Highlands Coffee giao ngay.
+            
         </p>
     </div>
-
+    </div>
+</div>
+}
     <div class="mt-5">
         <h4 class="text-danger fw-bold mb-3">Sản phẩm cùng loại</h4>
         <div class="row g-3">
