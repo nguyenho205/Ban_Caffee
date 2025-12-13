@@ -7,6 +7,7 @@ namespace Ban_Caffee.Models.Cart
 {
     public class Cart
     {
+        public List<CartItem> cart;
         
     }
 }

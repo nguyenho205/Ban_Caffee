@@ -1,8 +1,9 @@
 using Ban_Caffee.Models;
 using Ban_Caffee.Services;
+using DotNetEnv;
 using Microsoft.EntityFrameworkCore; // 1. BẮT BUỘC THÊM DÒNG NÀY
 using System.Text.Json;
-
+Env.Load();
 var builder = WebApplication.CreateBuilder(args);
 
 // --- PHẦN 1: CẤU HÌNH DATABASE (Fix lỗi Unable to resolve service) ---
